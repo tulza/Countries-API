@@ -4,7 +4,7 @@ import { regionBox, regionFilterFade } from "../theme/variants";
 
 const ContriesSearchBar = () => {
   return (
-    <div className="w-full flex justify-between h-[60px]">
+    <div className="w-full flex justify-between h-[60px] my-[45px]">
       <SearchBar />
       <FilterBox />
     </div>
@@ -34,7 +34,6 @@ const FilterBox = () => {
         className="relative w-[200px] h-[60px] bg-element rounded-md grid items-center pl-[25px] cursor-pointer"
         onClick={() => {
           setShowBox(() => {
-            console.log(!toggle);
             return !toggle;
           });
         }}
@@ -43,16 +42,16 @@ const FilterBox = () => {
         <img src="$" className="absolute right-[16px]"></img>
       </div>
       <motion.div
-        className="rounded-md overflow-hidden h-max w-full"
+        className="rounded-md overflow-hidden h-0 w-full z-10"
         variants={regionBox}
       >
-        <motion.div className="w-full bg-element  p-[10px] grid">
+        <motion.div className="w-full bg-element  p-[10px] grid ">
           {["Africa", "America", "Asia", "Europe", "Oceania"].map((country) => {
             return (
               <motion.div
                 key={country}
                 variants={regionFilterFade}
-                className="pl-[25px] py-1 rounded-md"
+                className="pl-[25px] py-1 rounded-md hover:outline hover:cursor-pointer"
               >
                 <p>{country}</p>
               </motion.div>

@@ -4,7 +4,7 @@ import CountriesContent from "./CountriesContent";
 
 const Home = () => {
   return (
-    <div className="h-full bg-background">
+    <div className="bg-background flex flex-col overflow-hidden">
       <NavigationBar />
       <CountriesContent />
     </div>

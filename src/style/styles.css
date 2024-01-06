@@ -29,5 +29,5 @@
 #root,
 html,
 body {
-  @apply h-[100vh];
+  @apply h-[100vh] bg-background;
 }
