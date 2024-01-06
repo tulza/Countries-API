@@ -6,6 +6,7 @@ const CountriesContent = () => {
   const [data, setData] = useState("waiting");
   const [region, setRegion] = useState(null);
   const [name, setSearch] = useState(null);
+  const [isLoading, setLoad] = useState(false);
 
   const handleSet = (name, region) => {
     setRegion(region);
@@ -14,7 +15,7 @@ const CountriesContent = () => {
 
   const fetchData = () => {
     setData("loading");
-    fetchCountiesData(setData, name, region);
+    fetchCountiesData(setData, name, region, setLoad);
   };
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const CountriesContent = () => {
   return (
     <div className="px-[80px] h-full bg-background">
       <ContriesSearchBar name={name} region={region} handleSet={handleSet} />
-      {JSON.stringify(data)}
+      
     </div>
   );
 };
