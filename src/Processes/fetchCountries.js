@@ -13,7 +13,7 @@ export const fetchCountiesData = async (set, name, region, setLoad) => {
   } else if (region) {
     link += `/region/${region}`;
   }
-  link += "?fields=name,region,population,capital";
+  link += "?fields=flags,name,region,population,capital";
 
   try {
     setLoad(true);
