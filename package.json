@@ -1,6 +1,6 @@
 {
-  "homepage": "vite-react-tail-deploy",
-  "name": "vite-react-tail-deploy",
+  "homepage": "Countries-API",
+  "name": "Countries-API",
   "private": false,
   "version": "0.0.0",
   "type": "module",

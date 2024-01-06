@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       colors: {
-        text: "#e1e6f4",
-        background: "#00030b",
-        primary: "#9daad9",
-        secondary: "#4f3180",
-        accent: "#8547b8",
+        element: "var(--element)",
+        background: "var(--background)",
+        text: "var(--text)",
+        input: "var(--input)",
+        navigation: "var(--navigation)",
       },
       screens: {},
       fontFamily: {},

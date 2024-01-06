@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./style/styles.css";
 import "./style/fonts.css";
-import Template from "./Components/Template";
+import Home from "./Components/Home";
 
 function App() {
   return (
     <>
-      <Template />
+      <Home />
     </>
   );
 }
