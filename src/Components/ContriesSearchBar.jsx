@@ -29,6 +29,7 @@ const SearchBar = ({ name, handleSet }) => {
 };
 
 const RegionBox = ({ region, handleSet }) => {
+  region = region ? region : "filter by Region";
   const [toggle, setShowBox] = useState(false);
   return (
     <motion.div
@@ -43,7 +44,7 @@ const RegionBox = ({ region, handleSet }) => {
           });
         }}
       >
-        <p className="pointer-events-none text-textHome">filter by Region</p>
+        <p className="pointer-events-none text-textHome">{region}</p>
         <img src="$" className="absolute right-[16px]"></img>
       </div>
       <motion.div

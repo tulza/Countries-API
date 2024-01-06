@@ -23,9 +23,9 @@ const CountriesContent = () => {
   }, [name, region]);
 
   return (
-    <div className="px-[80px] h-full bg-background">
+    <div className="px-[80px] h-full min-h- grid bg-background">
       <ContriesSearchBar name={name} region={region} handleSet={handleSet} />
-      
+      <div className="h-full w-full">asd</div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 /**
  * @param {*} set takes in set function of a usestate
- * return JSON
+ * return Counties with filter needed for front page only
  */
+
 export const fetchCountiesData = async (set, name, region, setLoad) => {
   console.log(name, region);
   let link = "https://restcountries.com/v3.1";
@@ -12,6 +13,8 @@ export const fetchCountiesData = async (set, name, region, setLoad) => {
   } else if (region) {
     link += `/region/${region}`;
   }
+  link += "?fields=name,region,population,capital";
+
   try {
     setLoad(true);
     const response = await fetch(link);
