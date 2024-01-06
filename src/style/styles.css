@@ -10,6 +10,9 @@
   --Input: hsl(0, 0%, 52%);
 
   --navigation: var(--element);
+
+  --textDetails: 16px;
+  --textHome: 14px;
 }
 
 [data-theme="light"] {
@@ -19,9 +22,12 @@
 }
 
 * {
+  color: var(--text);
   @apply transition-colors duration-200;
 }
 
-#root {
-  @apply bg-background h-[100vh];
+#root,
+html,
+body {
+  @apply h-[100vh] bg-background;
 }

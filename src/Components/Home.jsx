@@ -1,10 +1,12 @@
 import React from "react";
 import NavigationBar from "./navigationBar";
+import CountriesContent from "./CountriesContent";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-background flex flex-col overflow-hidden">
       <NavigationBar />
+      <CountriesContent />
     </div>
   );
 };

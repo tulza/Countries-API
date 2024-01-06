@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { HandleTheme } from "../../ToggleTheme";
+import { HandleTheme } from "../theme/ToggleTheme";
 import { motion } from "framer-motion";
+import { navHoverBar } from "../theme/variants";
 
 const NavigationBar = () => {
-  const hoverBar = { hover: { width: "100%" } };
   return (
     <div className="w-full h-[80px] bg-element px-[80px] flex items-center text-text justify-between shadow">
       <p className="font-bold">Where in the world?</p>
@@ -14,7 +14,7 @@ const NavigationBar = () => {
         <motion.div
           className="h-0.5 bg-text"
           initial={{ width: 0 }}
-          variants={hoverBar}
+          variants={navHoverBar}
         />
       </motion.div>
     </div>
