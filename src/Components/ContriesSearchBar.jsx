@@ -2,28 +2,33 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { regionBox, regionFilterFade } from "../theme/variants";
 
-const ContriesSearchBar = () => {
+const ContriesSearchBar = ({ name, region, handleSet }) => {
   return (
     <div className="w-full flex justify-between h-[60px] my-[45px]">
-      <SearchBar />
-      <FilterBox />
+      <SearchBar name={name} handleSet={handleSet} />
+      <RegionBox region={region} handleSet={handleSet} />
     </div>
   );
 };
 
-const SearchBar = () => {
+const SearchBar = ({ name, handleSet }) => {
+  name = name ? name : "";
   return (
     <div className="relative grid items-center">
       <input
         className="w-[480px] h-[60px] bg-element rounded-md pl-16"
         placeholder="Search for a country... "
+        value={name}
+        onChange={(e) => {
+          handleSet(e.target.value, null);
+        }}
       />
       <img src="$" className="absolute left-[30px]"></img>
     </div>
   );
 };
 
-const FilterBox = () => {
+const RegionBox = ({ region, handleSet }) => {
   const [toggle, setShowBox] = useState(false);
   return (
     <motion.div
@@ -46,14 +51,18 @@ const FilterBox = () => {
         variants={regionBox}
       >
         <motion.div className="w-full bg-element  p-[10px] grid ">
-          {["Africa", "America", "Asia", "Europe", "Oceania"].map((country) => {
+          {["Africa", "America", "Asia", "Europe", "Oceania"].map((Region) => {
             return (
               <motion.div
-                key={country}
+                key={Region}
                 variants={regionFilterFade}
-                className="pl-[25px] py-1 rounded-md hover:outline hover:cursor-pointer"
+                onClick={(e) => {
+                  setShowBox(false);
+                  handleSet(null, Region);
+                }}
+                className="pl-[25px] py-1 rounded-md hover:outline cursor-pointer"
               >
-                <p>{country}</p>
+                <p>{Region}</p>
               </motion.div>
             );
           })}

@@ -3,8 +3,9 @@
  * return JSON
  */
 export const fetchCountiesData = async (set, name, region) => {
+  console.log(name, region);
   let link = "https://restcountries.com/v3.1";
-  if (name == null && region == null) {
+  if (!!name == false && !!region == false) {
     link += "/all";
   } else if (name) {
     link += `/name/${name}`;
