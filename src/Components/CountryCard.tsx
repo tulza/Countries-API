@@ -22,7 +22,7 @@ export const CountryCard = ({
         <p className="font-bold my-4 text-xl">{country}</p>
         <p>
           <span className="font-bold">Population:</span>&nbsp;
-          {population}
+          {population.toLocaleString()}
         </p>
         <p>
           <span className="font-bold">Region:</span>&nbsp;
