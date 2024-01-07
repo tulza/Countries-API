@@ -1,6 +1,20 @@
 import React from "react";
 
-export const CountryCard = ({ flag, country, population, region, capital }) => {
+type Props = {
+  flag: string;
+  country: string;
+  population: number;
+  region: string;
+  capital: string;
+};
+
+export const CountryCard = ({
+  flag,
+  country,
+  population,
+  region,
+  capital,
+}: Props) => {
   return (
     <div className="h-[350px] w-[275px] bg-element rounded-lg flex flex-col overflow-hidden">
       <img src={flag}></img>
@@ -24,5 +38,5 @@ export const CountryCard = ({ flag, country, population, region, capital }) => {
 };
 
 export const PlaceholderCard = () => {
-  return <div className="h-[350px] w-[250px] ">placeholder</div>;
+  return <div className="h-[350px]  w-[250px] outline">placeholder</div>;
 };

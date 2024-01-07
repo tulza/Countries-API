@@ -2,7 +2,14 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { regionBox, regionFilterFade } from "../theme/variants";
 
-const ContriesSearchBar = ({ name, region, handleSet }) => {
+type CountriesSearchBarProps = SearchBarProps & {
+  region?: string | null;
+};
+const ContriesSearchBar = ({
+  name,
+  region,
+  handleSet,
+}: CountriesSearchBarProps) => {
   return (
     <div className="w-full flex justify-between h-[60px] my-[45px]">
       <SearchBar name={name} handleSet={handleSet} />
@@ -11,7 +18,12 @@ const ContriesSearchBar = ({ name, region, handleSet }) => {
   );
 };
 
-const SearchBar = ({ name, handleSet }) => {
+type SearchBarProps = {
+  name?: string | null;
+  handleSet: (any: any) => void;
+};
+
+const SearchBar = ({ name, handleSet }: SearchBarProps) => {
   name = name ? name : "";
   return (
     <div className="relative grid items-center">
@@ -20,7 +32,7 @@ const SearchBar = ({ name, handleSet }) => {
         placeholder="Search for a country... "
         value={name}
         onChange={(e) => {
-          handleSet(e.target.value, null);
+          handleSet({ name: e.target.value, region: null });
         }}
       />
       <img src="$" className="absolute left-[30px]"></img>
@@ -59,7 +71,7 @@ const RegionBox = ({ region, handleSet }) => {
                 variants={regionFilterFade}
                 onClick={(e) => {
                   setShowBox(false);
-                  handleSet(null, Region);
+                  handleSet({ name: null, region: Region });
                 }}
                 className="pl-[25px] py-1 rounded-md hover:outline cursor-pointer"
               >
