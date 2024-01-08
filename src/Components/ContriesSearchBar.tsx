@@ -11,7 +11,7 @@ const ContriesSearchBar = ({
   handleSet,
 }: CountriesSearchBarProps) => {
   return (
-    <div className="w-full flex justify-between h-[60px] my-[45px]">
+    <div className="w-full flex justify-between h-max my-[45px] mob:h-[60px] mob:flex-row gap-4 flex-col">
       <SearchBar name={name} handleSet={handleSet} />
       <RegionBox region={region} handleSet={handleSet} />
     </div>
@@ -28,7 +28,7 @@ const SearchBar = ({ name, handleSet }: SearchBarProps) => {
   return (
     <div className="relative grid items-center">
       <input
-        className="w-[480px] h-[60px] bg-element rounded-md pl-16"
+        className="mob:w-[480px] h-[60px] bg-element rounded-md pl-16"
         placeholder="Search for a country... "
         value={name}
         onChange={(e) => {

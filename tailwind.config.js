@@ -22,7 +22,9 @@ export default {
         input: "var(--input)",
         navigation: "var(--navigation)",
       },
-      screens: {},
+      screens: {
+        mob: "900px",
+      },
       fontFamily: {},
       transitionProperty: {},
     },

@@ -36,20 +36,16 @@ const CountriesContent = () => {
   }, [name, region]);
 
   return (
-    <div className="px-[80px] h-full flex flex-col bg-background">
+    <div className="px-[80px] h-full flex flex-col bg-background ">
       <ContriesSearchBar name={name} region={region} handleSet={handleSet} />
       <div
-        className="grid border-[#0000ff] gap-[25px]"
+        className="grid border-[#0000ff] gap-20 place-items-center"
         style={{
           gridTemplateColumns: `repeat(${Math.floor(
-            width / 300
+            width / 360
           )}, minmax(0, 1fr))`,
         }}
       >
-        {/* <div className="grid grid-cols-[repeat(4,minmax(0,280px))] border border-[#0000ff] "> */}
-        {/* {[...Array(10).keys()].map(({ key }) => (
-          <PlaceholderCard />
-        ))} */}
         {!isLoading &&
           data &&
           [...data].map((elem) => {
