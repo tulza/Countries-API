@@ -11,7 +11,7 @@ const ContriesSearchBar = ({
   handleSet,
 }: CountriesSearchBarProps) => {
   return (
-    <div className="w-full flex justify-between h-max my-[45px] mob:h-[60px] mob:flex-row gap-4 flex-col">
+    <div className="w-full flex justify-between h-max my-[45px] mob:h-[60px] h-[140px] mob:flex-row gap-4 flex-col">
       <SearchBar name={name} handleSet={handleSet} />
       <RegionBox region={region} handleSet={handleSet} />
     </div>

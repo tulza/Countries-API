@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "./navigationBar";
+import NavigationBar from "./NavigationBar";
 import CountriesContent from "./CountriesContent";
 
 const Home = () => {
